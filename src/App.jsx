@@ -1,6 +1,6 @@
 import { PureComponent } from "react";
 import { connect } from "react-redux";
-import sliceReducer from "./store/features/counter";
+import { addCounter as addCounters } from "./store/features/counter";
 
 export class App extends PureComponent {
   render() {
@@ -10,7 +10,7 @@ export class App extends PureComponent {
         <h2>
           App counter: {counter}
         </h2>
-        <button onClick={addCounter(8)}>+8</button>
+        <button onClick={() => addCounter(8)}>+8</button>
       </div>
     );
   }
@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addCounter: counter => dispatch(sliceReducer.action.addCounter(counter))
+  addCounter: counter => dispatch(addCounters(counter))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

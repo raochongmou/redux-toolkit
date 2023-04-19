@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const sliceReducer = createSlice({
   name: "counter",
   reducers: {
-    addCounter(state, actions) {
-      return { ...state, counter: actions.counter + state.counter.counter };
+    addCounter(state, { payload }) {
+      state.counter = payload + state.counter;
     },
     subCounter(state, actions) {}
   },
@@ -13,6 +13,8 @@ const sliceReducer = createSlice({
   }
 });
 
-console.log("sliceReducer.reducer", sliceReducer.reducer);
+console.log("sliceReducer.reducer", sliceReducer);
+export const addCounter = sliceReducer.actions.addCounter;
+export const subCounter = sliceReducer.actions.subCounter;
 
 export default sliceReducer.reducer;
