@@ -1,6 +1,8 @@
 import { PureComponent } from "react";
 import { connect } from "react-redux";
 import { addCounter as addCounters } from "./store/features/counter";
+import Home from "./pages/Home";
+import WrapperCss from "./css/style";
 
 export class App extends PureComponent {
   render() {
@@ -11,6 +13,9 @@ export class App extends PureComponent {
           App counter: {counter}
         </h2>
         <button onClick={() => addCounter(8)}>+8</button>
+        <WrapperCss className="app-pages">
+          <Home />
+        </WrapperCss>
       </div>
     );
   }
