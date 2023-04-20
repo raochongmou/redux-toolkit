@@ -10,7 +10,7 @@ export const fetchMultiData = createAsyncThunk(
     // console.log("dispatch", dispatch);
     dispatch(changeBanners(banners));
     dispatch(changeRecommends(recommends));
-    // return;
+    // return res.data.data;
   }
 );
 // export const fetchMultiData = createAsyncThunk(
